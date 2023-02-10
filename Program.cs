@@ -4,11 +4,12 @@ namespace EmployeeExample
 {
     public class Employee
     {
+        // Initialize private Id, Name, DepartmentName
         private int Id;
         private string Name;
         private string DepartmentName;
 
-        public delegate void MethodCalledEventHandler(string message);
+        public delegate void MethodCalledEventHandler(string message); //using delegate
         public event MethodCalledEventHandler MethodCalled;
 
         public Employee(int id, string name, string departmentName)
@@ -20,18 +21,21 @@ namespace EmployeeExample
 
         public int GetId()
         {
+            //When method called GetId() will print
             OnMethodCalled("GetId() method called");
             return Id;
         }
 
         public string GetName()
         {
+            //GetName() will print
             OnMethodCalled("GetName() method called");
             return Name;
         }
 
         public string GetDepartmentName()
         {
+            //GetDepartment will print
             OnMethodCalled("GetDepartmentName() method called");
             return DepartmentName;
         }
@@ -65,6 +69,7 @@ namespace EmployeeExample
     {
         static void Main(string[] args)
         {
+            //User will enter details
             Console.WriteLine("Enter Emp ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
 
